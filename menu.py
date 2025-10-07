@@ -1,6 +1,7 @@
 
 #add some fileio stuff
 import csv
+from classfile import *
 
 data = []
 
@@ -25,5 +26,7 @@ while i<len(rows):
     data.append(["name:", name, "units:", units, "tiers:", tiers, "cost: ", cost])
 
     i+=3
+
+    data.append(Service(name, units, tiers, cost))
 
 print(data)
