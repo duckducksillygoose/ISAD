@@ -28,7 +28,7 @@ while i<len(rows):
 
     data.append(Service(name, units, tiers, cost))
 
-print(data)
+
 
 
 print("-------------WELCOME TO THE MENU-----------------")
@@ -48,6 +48,18 @@ while answer !="Q":
         elif sub_type == "Computing":
             pass
 
+        elif sub_type == "Database":
+            pass
+
+        elif sub_type == "Integration":
+            pass
+
+        elif sub_type == "Networking":
+            pass
+
+        elif sub_type == "Storage":
+            pass
+
     elif answer == "2":
         pass
 
@@ -57,4 +69,6 @@ while answer !="Q":
 
     else:
         print("This is not a valid entry")
+
+print("You are now exiting the menu")
 
