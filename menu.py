@@ -23,7 +23,6 @@ while i<len(rows):
 
     cost = [float(x) for x in rows[i+2]]
 
-    data.append(["name:", name, "units:", units, "tiers:", tiers, "cost: ", cost])
 
     i+=3
 
