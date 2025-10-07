@@ -7,5 +7,14 @@ class Service():
         self.tiers = tiers
         self.cost =cost
 
+    def get_price(self):
+        amount = input("How much of this service would you like?")
+        for i in range(len(self.tiers)-1):
+            if self.tiers[i] < float(amount) <self.tiers[i+1]:
+                cost=self.cost[i]
+                print("The cost per unit for this amount is", self.cost[i])
+                return cost*amount
+
+
         
     

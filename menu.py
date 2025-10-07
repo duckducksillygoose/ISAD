@@ -31,6 +31,16 @@ while i<len(rows):
     i += 3  
 
 
+AI = services[0]
+Computing = services[1]
+Integration=services[2]
+Networking = services[3]
+Database = services[4]
+Storage = services[5]
+
+
+
+
 
 print("-------------WELCOME TO THE MENU-----------------")
 
@@ -45,9 +55,10 @@ answer = input("Please select your options")
 while answer !="Q":
     if answer == "1":
         sub_type = input("What subscription would you like?")
-        amount = input("Please enter the amount required")
+
         if sub_type == "AI":
-            pass
+            print("You have selected", sub_type)
+            AI.get_price()
             
     
 
