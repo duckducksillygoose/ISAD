@@ -6,8 +6,7 @@ data = []
 
 service_file = open("services.csv", "r")
 reader = csv.reader(service_file)
-
-rows = list(reader)
+rows = [row for row in reader if row]
 
 i=0
 
@@ -25,4 +24,6 @@ while i<len(rows):
 
     data.append(["name:", name, "units:", units, "tiers:", tiers, "cost: ", cost])
 
-print()
+    i+=3
+
+print(data)
