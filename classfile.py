@@ -13,7 +13,7 @@ class Service():
             if self.tiers[i] < float(amount) <self.tiers[i+1]:
                 cost=self.cost[i]
                 print("The cost per unit for this amount is", self.cost[i])
-                return cost*amount
+                print("The total cost is", cost * float(amount))
 
 
         
