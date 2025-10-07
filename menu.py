@@ -29,3 +29,32 @@ while i<len(rows):
     data.append(Service(name, units, tiers, cost))
 
 print(data)
+
+
+print("-------------WELCOME TO THE MENU-----------------")
+
+print("To add a subscription, press 1")
+print("To get rid of a subscription, press 2")
+print("Press s for the total breakdown of all subscriptions")
+print("Press Q to quit")
+
+answer = input("Please select your options")
+while answer !="Q":
+    if answer == "1":
+        sub_type = input("What subscription would you like?")
+        if sub_type == "AI":
+            pass
+
+        elif sub_type == "Computing":
+            pass
+
+    elif answer == "2":
+        pass
+
+    elif answer.upper() == "S":
+        pass
+
+
+    else:
+        print("This is not a valid entry")
+
