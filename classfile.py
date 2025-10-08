@@ -1,11 +1,12 @@
 
 
 class Service():
-    def __init__ (self, name, units, tiers, cost, user_amount):
+    def __init__ (self, name, units, tiers, cost):
         self.name = name
         self.units = units
         self.tiers = tiers
         self.cost =cost
+        total_cost = 0
 
     def get_price(self):
         amount = input("How much of this service would you like?")
@@ -14,6 +15,12 @@ class Service():
                 cost=self.cost[i]
                 print("The cost per unit for this amount is", self.cost[i])
                 print("The total cost is", cost * float(amount))
+
+
+
+    def overall_cost(self):
+        return sum(s.cost for s in subscriptions)
+        
 
 
         

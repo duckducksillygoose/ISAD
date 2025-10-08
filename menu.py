@@ -13,6 +13,9 @@ rows = [row for row in reader if row]
 i=0
 services = []
 
+user_expenditure = 0
+
+
 while i<len(rows):
     if len(rows[i]) == 0:
         i+=1
@@ -55,27 +58,27 @@ answer = input("Please select your options")
 while answer !="Q":
     if answer == "1":
         sub_type = input("What subscription would you like?")
+        print("You have selected", sub_type)
 
         if sub_type == "AI":
-            print("You have selected", sub_type)
             AI.get_price()
             
     
 
         elif sub_type == "Computing":
-            pass
+            Computing.get_price()
 
         elif sub_type == "Database":
-            pass
+            Database.get_price()
 
         elif sub_type == "Integration":
-            pass
+            Integration.get_price()
 
         elif sub_type == "Networking":
-            pass
+            Networking.get_price()
 
         elif sub_type == "Storage":
-            pass
+            Storage.get_price()
 
     elif answer == "2":
         pass
