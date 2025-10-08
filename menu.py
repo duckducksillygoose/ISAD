@@ -62,24 +62,29 @@ while answer !="Q":
 
         if sub_type == "AI":
             AI.get_price()
-            
+            manager.add_subscription(sub_type)
             
     
 
         elif sub_type == "Computing":
             Computing.get_price()
+            manager.add_subscription(sub_type)
 
         elif sub_type == "Database":
             Database.get_price()
+            manager.add_subscription(sub_type)
 
         elif sub_type == "Integration":
             Integration.get_price()
+            manager.add_subscription(sub_type)
 
         elif sub_type == "Networking":
             Networking.get_price()
+            manager.add_subscription(sub_type)
 
         elif sub_type == "Storage":
             Storage.get_price()
+            manager.add_subscription(sub_type)
 
     elif answer == "2":
         pass
