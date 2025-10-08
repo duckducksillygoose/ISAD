@@ -3,7 +3,7 @@
 import csv
 from classfile import *
 
-data = []
+manager = SubscriptionManager()
 
 
 service_file = open("services.csv", "r")
