@@ -29,7 +29,7 @@ while i<len(rows):
 
     # create Service object and add it to the list
     service = Service(name, units, tiers, cost, 0)
-    services.append(service)
+
 
     i += 3  
 
@@ -62,6 +62,7 @@ while answer !="Q":
 
         if sub_type == "AI":
             AI.get_price()
+            
             
     
 

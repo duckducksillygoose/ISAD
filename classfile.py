@@ -1,6 +1,6 @@
 
 class SubscriptionManager():
-    def __init__ (self, subscriptions)
+    def __init__ (self, subscriptions):
         self.subscriptions = []
     def overall_cost(self):
         return sum(s.cost for s in self.subscriptions)
