@@ -6,7 +6,7 @@ class Service():
         self.units = units
         self.tiers = tiers
         self.cost =cost
-        total_cost = 0
+
 
     def get_price(self):
         amount = input("How much of this service would you like?")
