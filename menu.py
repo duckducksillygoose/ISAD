@@ -58,7 +58,7 @@ while answer !="Q":
         print("You have selected", sub_type)
 
         if sub_type == "AI":
-            service[0].get_price()
+            services[0].get_price()
             manager.add_subscription(sub_type)
             
     
