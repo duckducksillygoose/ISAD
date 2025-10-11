@@ -59,10 +59,10 @@ while answer !="Q":
 
         found = False
         for s in services:
-            if services[i].name == sub_type:
-                manager.add_subscription(services[i])
+            if s.name.upper() == sub_type.upper():
+                manager.add_subscription(s)
                 found = True
-                services[i].get_price()
+                s.get_price()
 
         if not found:
                 print("We do not offer this subscription")
