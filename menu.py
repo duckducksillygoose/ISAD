@@ -58,7 +58,7 @@ while answer !="Q":
         print("You have selected", sub_type)
 
         found = False
-        for i in range(6):
+        for s in services:
             if services[i].name == sub_type:
                 manager.add_subscription(services[i])
                 found = True
