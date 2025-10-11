@@ -93,5 +93,8 @@ while answer !="Q":
     else:
         print("This is not a valid entry")
 
+
+    answer = input("What would you like to do?")
+
 print("You are now exiting the menu")
 
