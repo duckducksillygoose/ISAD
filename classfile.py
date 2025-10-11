@@ -9,6 +9,10 @@ class SubscriptionManager():
         self.subscriptions.append(type)
         print("Subscription added successfully :)")
 
+    def delete_subscription(self, type):
+        self.subscriptions.remove(type)
+        print("subscription removed successfully :)")
+
 
 class Service():
     def __init__ (self, name, units, tiers, cost):
