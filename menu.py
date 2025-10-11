@@ -11,7 +11,7 @@ reader = csv.reader(service_file)
 rows = [row for row in reader if row]
 
 i=0
-services = []
+
 
 user_expenditure = 0
 
