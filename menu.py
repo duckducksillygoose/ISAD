@@ -84,7 +84,17 @@ while answer !="Q":
             manager.add_subscription(sub_type)
 
     elif answer == "2":
-        pass
+        to_delete = input("Which subscription would you like to delete? ")
+        if to_delete in manager.subscriptions:
+            manager.delete_subscription(to_delete)
+        else:
+            print("Subscription not found.")
+
+
+            
+    
+
+
 
     elif answer.upper() == "S":
         pass
