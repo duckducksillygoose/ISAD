@@ -62,6 +62,7 @@ while answer !="Q":
             if services[i].name == sub_type:
                 manager.add_subscription(services[i])
                 found = True
+                services[i].get_price()
 
         if not found:
                 print("We do not offer this subscription")
