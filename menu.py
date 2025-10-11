@@ -1,5 +1,5 @@
 
-#add some fileio stuff
+
 import csv
 from classfile import *
 
@@ -11,11 +11,11 @@ reader = csv.reader(service_file)
 rows = [row for row in reader if row]
 
 i=0
-services = []
+
 
 user_expenditure = 0
 
-
+services=[]
 while i<len(rows):
     if len(rows[i]) == 0:
         i+=1
@@ -27,7 +27,7 @@ while i<len(rows):
     tiers = [float(x) for x in rows[i+1]]
     cost = [float(x) for x in rows[i+2]]
 
-    services=[]
+    
     # create Service object and add it to the list
     service = Service(name, units, tiers, cost)
     services.append(service)
@@ -37,9 +37,9 @@ while i<len(rows):
 
 
 
+#manager is for the subscriptions that the user has, while services is a list of services
 
-
-
+#services is an object list
 
 
 print("-------------WELCOME TO THE MENU-----------------")
@@ -49,7 +49,7 @@ print("To get rid of a subscription, press 2")
 print("Press s for the total breakdown of all subscriptions")
 print("Press Q to quit")
 
-subscriptions =[]
+
 
 answer = input("Please select your options")
 while answer !="Q":
@@ -57,35 +57,19 @@ while answer !="Q":
         sub_type = input("What subscription would you like?")
         print("You have selected", sub_type)
 
-        if sub_type == "AI":
-            services[0].get_price()
-            manager.add_subscription(sub_type)
-            
-    
+        found = False
+        for s in services:
+            if s.name.upper() == sub_type.upper():
+                manager.add_subscription(s)
+                found = True
+                s.get_price()
 
-        elif sub_type == "Computing":
-            services[1].get_price()
-            manager.add_subscription(sub_type)
-
-        elif sub_type == "Database":
-            services[2].get_price()
-            manager.add_subscription(sub_type)
-
-        elif sub_type == "Integration":
-            services[3].get_price()
-            manager.add_subscription(sub_type)
-
-        elif sub_type == "Networking":
-            services[4].get_price()
-            manager.add_subscription(sub_type)
-
-        elif sub_type == "Storage":
-            services[5].get_price()
-            manager.add_subscription(sub_type)
+        if not found:
+                print("We do not offer this subscription")
 
     elif answer == "2":
         to_delete = input("Which subscription would you like to delete? ")
-        if to_delete in manager.subscriptions:
+        if to_delete in manager.subscriptions.name: #if you already have it
             manager.delete_subscription(to_delete)
         else:
             print("Subscription not found.")
