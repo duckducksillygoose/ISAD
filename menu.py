@@ -27,19 +27,16 @@ while i<len(rows):
     tiers = [float(x) for x in rows[i+1]]
     cost = [float(x) for x in rows[i+2]]
 
+    services=[]
     # create Service object and add it to the list
-    service = Service(name, units, tiers, cost, 0)
+    service = Service(name, units, tiers, cost)
+    services.append(service)
 
 
     i += 3  
 
 
-AI = services[0]
-Computing = services[1]
-Integration=services[2]
-Networking = services[3]
-Database = services[4]
-Storage = services[5]
+
 
 
 
@@ -61,29 +58,29 @@ while answer !="Q":
         print("You have selected", sub_type)
 
         if sub_type == "AI":
-            AI.get_price()
+            services[0].get_price()
             manager.add_subscription(sub_type)
             
     
 
         elif sub_type == "Computing":
-            Computing.get_price()
+            services[1].get_price()
             manager.add_subscription(sub_type)
 
         elif sub_type == "Database":
-            Database.get_price()
+            services[2].get_price()
             manager.add_subscription(sub_type)
 
         elif sub_type == "Integration":
-            Integration.get_price()
+            services[3].get_price()
             manager.add_subscription(sub_type)
 
         elif sub_type == "Networking":
-            Networking.get_price()
+            services[4].get_price()
             manager.add_subscription(sub_type)
 
         elif sub_type == "Storage":
-            Storage.get_price()
+            services[5].get_price()
             manager.add_subscription(sub_type)
 
     elif answer == "2":
@@ -95,6 +92,9 @@ while answer !="Q":
 
     else:
         print("This is not a valid entry")
+
+
+    answer = input("What would you like to do?")
 
 print("You are now exiting the menu")
 
