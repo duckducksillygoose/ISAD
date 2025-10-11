@@ -39,7 +39,7 @@ while i<len(rows):
 
 #manager is for the subscriptions that the user has, while services is a list of services
 
-
+#services is an object list
 
 
 print("-------------WELCOME TO THE MENU-----------------")
