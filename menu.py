@@ -67,11 +67,17 @@ while answer !="Q":
         if not found:
                 print("We do not offer this subscription")
 
+
+        print(manager.subscriptions)
     elif answer == "2":
+        found = False
         to_delete = input("Which subscription would you like to delete? ")
-        if to_delete in manager.subscriptions.name: #if you already have it
-            manager.delete_subscription(to_delete)
-        else:
+        for entry in manager.subscriptions:
+            if entry.name.upper() == to_delete.upper(): #if you already have it
+                manager.delete_subscription(entry)
+                found = True
+        
+        if not found:
             print("Subscription not found.")
 
 
