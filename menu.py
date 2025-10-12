@@ -81,7 +81,10 @@ while answer !="Q":
 
 
     elif answer.upper() == "S":
-        pass
+        print("Your subscriptions are as follows:")
+        for entry in manager.subscriptions:
+            print("Name", entry.name, "Units", entry.units, "Cost:" ,entry.cost)
+
 
 
     else:
