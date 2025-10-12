@@ -56,13 +56,17 @@ while answer !="Q":
     if answer == "1":
         sub_type = input("What subscription would you like?")
         print("You have selected", sub_type)
-
+        
         found = False
         for s in services:
-            if s.name.upper() == sub_type.upper():
+            if s.name.upper() == sub_type.upper() and s not in manager.subscriptions:
                 manager.add_subscription(s)
                 found = True
                 s.get_price()
+
+            elif s in manager.subscriptions:
+                print("You already have this subscription")
+                found = True
 
         if not found:
                 print("We do not offer this subscription")
