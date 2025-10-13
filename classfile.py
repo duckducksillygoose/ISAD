@@ -32,9 +32,13 @@ class Service():
 
         cost = None
         for i in range(len(self.tiers)):
- 
-            if i == len(self.tiers) - 1 or (self.tiers[i] <= amount < self.tiers[i + 1]):
-                cost = self.cost[i]
+            if cost is None:
+                if i == len(self.tiers) - 1 or (self.tiers[i] <= amount < self.tiers[i + 1]):
+                    cost = self.cost[i]
+
+                elif amount >self.tiers[i]:
+                    cost = self.cost[i]
+
 
         if cost is not None:
             total = cost * amount
