@@ -14,8 +14,12 @@ class SubscriptionManager():
             print("Service has already been susbcribed to")
 
     def delete_subscription(self, type):
-        self.subscriptions.remove(type)
-        print("subscription removed successfully :)")
+        if type in self.subscriptions:
+            self.subscriptions.remove(type)
+            print("subscription removed successfully :)")
+
+        else:
+            print("You do not own this subscription")
 
 
 class Service():

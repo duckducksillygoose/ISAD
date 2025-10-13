@@ -45,3 +45,7 @@ print("----DELETING SUBSCRIPTIONS--------")
 d1 = manager.delete_subscription(netflix)
 print("Deleted Netflix")
 print("Current subscriptions", [s.name for s in manager.subscriptions])
+
+
+print("Trying to delete youtube")
+d2 = manager.delete_subscription(youtube) #not in list
