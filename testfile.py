@@ -14,6 +14,10 @@ services = [netflix, spotify, youtube]
 
 print("-----ADDING SUBSCRIPTIONS-------")
 
+a1 = manager.add_subscription(netflix)
+print("Adding netflix", a1)
+print("Manager subscriptions:", [s.name for s in manager.subscriptions])
+
 
 
 print("----DELETING SUBSCRIPTIONS--------")
