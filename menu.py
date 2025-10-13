@@ -80,9 +80,13 @@ while answer !="Q":
             if entry.name.upper() == to_delete.upper(): #if you already have it
                 manager.delete_subscription(entry)
                 found = True
+
+            elif entry in services: #in services but do not have
+                print("We do offer this subscription, but you do not have it currently")
+                found = True
         
         if not found:
-            print("Subscription not found.")
+            print("Not a valid subscription")
 
 
             
