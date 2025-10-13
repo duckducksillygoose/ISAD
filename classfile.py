@@ -28,15 +28,23 @@ class Service():
 
 
     def get_price(self):
-        amount = input("How much of this service would you like?")
-        for i in range(len(self.tiers)-1):
-            if self.tiers[i] < float(amount) <self.tiers[i+1]:
-                cost=self.cost[i]
-                print("The cost per unit for this amount is", self.cost[i])
-                print("The total cost is", cost * float(amount))
-                self.overall = float(cost)*float(amount)
-                print()
-                print()
+        amount = float(input("How much of this service would you like?"))
+
+        cost = None
+        for i in range(len(self.tiers)):
+ 
+            if i == len(self.tiers) - 1 or (self.tiers[i] <= amount < self.tiers[i + 1]):
+                cost = self.cost[i]
+
+        if cost is not None:
+            total = cost * amount
+            print("The cost per unit for this amount is", cost)
+            print("The total cost is", total)
+            self.overall = total
+            print()
+            print()
+        else:
+            print("Could not determine price for this amount.")
                 
 
 
