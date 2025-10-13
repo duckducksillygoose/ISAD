@@ -60,14 +60,12 @@ def load_menu():
             
             found = False
             for s in services:
-                if s.name.upper() == sub_type.upper() and s not in manager.subscriptions:
+                if s.name.upper() == sub_type.upper():
                     manager.add_subscription(s)
                     found = True
                     s.get_price()
 
-                elif s in manager.subscriptions:
-                    print("You already have this subscription")
-                    found = True
+    
 
             if not found:
                     print("We do not offer this subscription")
