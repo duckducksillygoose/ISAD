@@ -16,19 +16,32 @@ services = [netflix, spotify, youtube]
 
 print("-----ADDING SUBSCRIPTIONS-------")
 
-a1 = manager.add_subscription(netflix)
+
 print("Adding netflix")
+a1 = manager.add_subscription(netflix)
 print("Manager subscriptions:", [s.name for s in manager.subscriptions])
+netflix.get_price()
 
 ##duplicate
+print("Trying to add netflix again")
 a2 = manager.add_subscription(netflix)
-print("Tried adding Netflix again (should not duplicate)")
+
 print("Current subscriptions:", [s.name for s in manager.subscriptions])
 
 
-a3 = manager.add_subscription(spotify)
+print()
+print()
+
 print("Adding spotify")
+a3 = manager.add_subscription(spotify)
 print("Current subscriptions:", [s.name for s in manager.subscriptions])
+spotify.get_price()
+
+print()
+print()
 
 
 print("----DELETING SUBSCRIPTIONS--------")
+d1 = manager.delete_subscription(netflix)
+print("Deleted Netflix")
+print("Current subscriptions", [s.name for s in manager.subscriptions])
