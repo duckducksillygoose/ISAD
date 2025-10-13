@@ -6,7 +6,7 @@ from classfile import *
 manager = SubscriptionManager()
 services=[]
 
-def file_read(self):
+def file_read():
     service_file = open("services.csv", "r")
     reader = csv.reader(service_file)
     rows = [row for row in reader if row]
@@ -41,7 +41,7 @@ def file_read(self):
 #manager is for the subscriptions that the user has, while services is a list of services
 
 #services is an object list
-def load_menu(self):
+def load_menu():
 
     print("-------------WELCOME TO THE MENU-----------------")
 
@@ -121,4 +121,5 @@ def load_menu(self):
 
 
 if __name__ == "__main__":
+    file_read()
     load_menu()
