@@ -49,3 +49,19 @@ print("Current subscriptions", [s.name for s in manager.subscriptions])
 
 print("Trying to delete youtube")
 d2 = manager.delete_subscription(youtube) #not in list
+
+
+print("TOTAL SUBSCRIPTION COSTS")
+
+print("Your subscriptions are as follows:")
+total = 0
+for entry in manager.subscriptions:
+    print("Subscription: ", entry.name)
+    print("Units: ", entry.units)
+    print("Overall cost", entry.overall)
+
+    print()
+    print()
+
+    total +=entry.overall
+    print("Your total subscription costs are:" ,total)
