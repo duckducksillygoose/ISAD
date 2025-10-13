@@ -118,3 +118,7 @@ def load_menu(self):
 
     print("You are now exiting the menu")
 
+
+
+if __name__ == "__main__":
+    load_menu()
