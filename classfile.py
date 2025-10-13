@@ -6,8 +6,12 @@ class SubscriptionManager():
         return sum(s.overall for s in self.subscriptions)
     
     def add_subscription(self, type):
-        self.subscriptions.append(type)
-        print("Subscription added successfully :)")
+        if type not in self.subscriptions:
+            self.subscriptions.append(type)
+            print("Subscription added successfully :)")
+
+        else:
+            print("Service has already been susbcribed to")
 
     def delete_subscription(self, type):
         self.subscriptions.remove(type)

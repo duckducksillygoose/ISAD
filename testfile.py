@@ -20,6 +20,10 @@ a1 = manager.add_subscription(netflix)
 print("Adding netflix")
 print("Manager subscriptions:", [s.name for s in manager.subscriptions])
 
+##duplicate
+a2 = manager.add_subscription(netflix)
+print("Tried adding Netflix again (should not duplicate)")
+print("Current subscriptions:", [s.name for s in manager.subscriptions])
 
 
 print("----DELETING SUBSCRIPTIONS--------")
