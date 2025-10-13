@@ -26,4 +26,9 @@ print("Tried adding Netflix again (should not duplicate)")
 print("Current subscriptions:", [s.name for s in manager.subscriptions])
 
 
+a3 = manager.add_subscription(spotify)
+print("Adding spotify")
+print("Current subscriptions:", [s.name for s in manager.subscriptions])
+
+
 print("----DELETING SUBSCRIPTIONS--------")
