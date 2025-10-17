@@ -3,6 +3,7 @@ from menu import *
 import time
 
 manager= SubscriptionManager()
+assert manager.overall_cost() == 0, "Initial cost should be zero since no subscriptions"
 
 ###we are testing add subscription, delete subscription and get_price
 
@@ -26,8 +27,10 @@ netflix.get_price()
 ##duplicate
 print("Trying to add netflix again")
 a2 = manager.add_subscription(netflix)
+assert manager.subscriptions.count(netflix) == 1, "Netflix should only be once in the list"
 
 print("Current subscriptions:", [s.name for s in manager.subscriptions])
+
 
 
 print()
@@ -42,10 +45,13 @@ print()
 print()
 
 
+
+
 print("----DELETING SUBSCRIPTIONS--------")
 d1 = manager.delete_subscription(netflix)
 print("Deleted Netflix")
 print("Current subscriptions", [s.name for s in manager.subscriptions])
+assert netflix not in manager.subscriptions, "Subscription should be removed"
 
 
 print("Trying to delete youtube")
@@ -61,11 +67,14 @@ for entry in manager.subscriptions:
     print("Units: ", entry.units)
     print("Overall cost", entry.overall)
 
+
     print()
     print()
 
     total +=entry.overall
     print("Your total subscription costs are:" ,total)
+
+assert manager.overall_cost !=0, "Should have services"
 
 
 time.sleep(1)
