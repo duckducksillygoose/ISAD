@@ -33,6 +33,8 @@ class Service():
 
     def get_price(self):
         amount = float(input("How much of this service would you like?"))
+        if amount<0:
+            raise Exception("This is an invalid amount")
 
         cost = None
         for i in range(len(self.tiers)):
