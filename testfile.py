@@ -71,7 +71,7 @@ for entry in manager.subscriptions:
 time.sleep(1)
 
 print("Now we will be testing the boundary values of each")
-print("Add 4 hours of netflix, price should be 28 exact")
+print("Add 4 hours of netflix, price should be 18 ")
 t1= manager.add_subscription(netflix)
 netflix.get_price()
 manager.delete_subscription(netflix)
@@ -80,3 +80,9 @@ print("Now we are adding 3.99 hours of netflix, price should be 28")
 
 manager.add_subscription(netflix)
 netflix.get_price()
+manager.delete_subscription(netflix)
+
+print("Add 4.01 hours of netflix, unit price should be 18")
+t1= manager.add_subscription(netflix)
+netflix.get_price()
+manager.delete_subscription(netflix)

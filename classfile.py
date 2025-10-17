@@ -37,13 +37,12 @@ class Service():
             raise Exception("This is an invalid amount")
 
         cost = None
-        for i in range(len(self.tiers)):
+        for i in range(len(self.tiers)-1):
             if cost is None:
                 if i == len(self.tiers) - 1 or (self.tiers[i] <= amount < self.tiers[i + 1]):
                     cost = self.cost[i]
 
-                elif amount >=self.tiers[i]:
-                    cost = self.cost[-1]
+    
 
 
         if cost is not None:
