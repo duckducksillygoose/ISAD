@@ -42,8 +42,8 @@ class Service():
                 if i == len(self.tiers) - 1 or (self.tiers[i] <= amount < self.tiers[i + 1]):
                     cost = self.cost[i]
 
-                elif amount >self.tiers[i]:
-                    cost = self.cost[i]
+                elif amount >=self.tiers[i]:
+                    cost = self.cost[-1]
 
 
         if cost is not None:

@@ -1,5 +1,6 @@
 from classfile import *
 from menu import *
+import time
 
 manager= SubscriptionManager()
 
@@ -65,3 +66,17 @@ for entry in manager.subscriptions:
 
     total +=entry.overall
     print("Your total subscription costs are:" ,total)
+
+
+time.sleep(1)
+
+print("Now we will be testing the boundary values of each")
+print("Add 4 hours of netflix, price should be 28 exact")
+t1= manager.add_subscription(netflix)
+netflix.get_price()
+manager.delete_subscription(netflix)
+
+print("Now we are adding 3.99 hours of netflix, price should be 28")
+
+manager.add_subscription(netflix)
+netflix.get_price()
