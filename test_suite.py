@@ -14,3 +14,23 @@ youtube = Service("Youtube", "per month", [0, 20, 300], [19, 16, 13])
 services = [netflix, spotify, youtube]
 
 print("=== COMPREHENSIVE TEST SUITE ===\n")
+
+print("----- BLACK-BOX TESTS --------")
+
+print("1. Testing Initial State")
+assert manager.overall_cost() == 0, "Initial cost should be zero since no subscriptions"
+print("PASS: Initial manager has zero cost")
+
+print("\n2. Testing Adding Subscriptions")
+print("Adding Netflix")
+manager.add_subscription(netflix)
+print("Manager subscriptions:", [s.name for s in manager.subscriptions])
+assert len(manager.subscriptions) == 1, "Should have 1 subscription"
+print("PASS: Netflix added successfully")
+
+print("Trying to add Netflix again (duplicate)")
+manager.add_subscription(netflix)
+assert manager.subscriptions.count(netflix) == 1, "Netflix should only be once in the list"
+print("PASS: Duplicate Netflix prevented")
+
+
