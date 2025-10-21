@@ -40,12 +40,6 @@ print("Current subscriptions:", [s.name for s in manager.subscriptions])
 assert len(manager.subscriptions) == 2, "Should have 2 subscriptions"
 print("Spotify added successfully")
 
-#FULL LIST OF TESTS
-
-
-
-
-
 
 #error cases
 
@@ -61,6 +55,8 @@ print("Spotify added successfully")
 
 
 #TESTING COST CALCULATIONS (more whitebox)
+
+print("_____________WHITEBOX TESTING___________________")
 
 #netflix calculate cost as well as spotify
 result_cc = netflix.calculate_cost(1)
@@ -121,6 +117,10 @@ print("Removing Netflix")
 manager.delete_subscription(netflix)
 assert netflix not in manager.subscriptions, "Netflix should be removed"
 assert len(manager.subscriptions) == 1, "Should have 1 subscription left"
+
+
+
+print("ALL TESTS PASSED AND COMPLETED")
 
 
 
