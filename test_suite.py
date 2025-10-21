@@ -40,6 +40,45 @@ print("Current subscriptions:", [s.name for s in manager.subscriptions])
 assert len(manager.subscriptions) == 2, "Should have 2 subscriptions"
 print("PASS: Spotify added successfully")
 
+#FULL LIST OF TESTS
+
+
+
+
+
+
+#error cases
+
+#do netflix.calculatecost(negative)
+#except ValueError(print(Pass))
+
+#test the zero
+
+
+
+#test the removal of a subscription you don't have
+
+
+
+#TESTING COST CALCULATIONS (more whitebox)
+
+#netflix calculate cost as well as spotify
+result_cc = netflix.get_price(1)
+expected_cc = 1*28 #28
+assert result_cc == expected_cc, "Test failed, calculated incorrect result"
+
+#tier 2 test
+result_t2 = netflix.calculate_cost(4) #should be 18
+
+
+
+
+
+
+
+
+
+
 
 
 
