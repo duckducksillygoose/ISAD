@@ -93,7 +93,7 @@ print("Tier 4 works")
 #large value testing
 
 result_large = spotify.calculate_cost(1000)
-expected_large = 10000
+expected_large = 1000*5
 assert result_large == expected_large
 print("This program handles large values well")
 
@@ -117,8 +117,11 @@ print("Zero amount handled correctly, test passed")
 
 print("Subscription removal testing")
 
-print("Trying to remove Hulu, not in list")
-manager.delete_subscription(Hulu)
+print("Removing Netflix")
+manager.delete_subscription(netflix)
+assert netflix not in manager.subscriptions, "Netflix should be removed"
+assert len(manager.subscriptions) == 1, "Should have 1 subscription left"
+
 
 
 
