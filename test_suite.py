@@ -19,26 +19,26 @@ print("----- BLACK-BOX TESTS --------")
 
 print("1. Testing Initial State")
 assert manager.overall_cost() == 0, "Initial cost should be zero since no subscriptions"
-print("PASS: Initial manager has zero cost")
+print("zero initial cost")
 
 print("2. Testing Adding Subscriptions")
 print("Adding Netflix")
 manager.add_subscription(netflix)
 print("Manager subscriptions:", [s.name for s in manager.subscriptions])
 assert len(manager.subscriptions) == 1, "Should have 1 subscription"
-print("PASS: Netflix added successfully")
+print("Netflix added successfully")
 
 print("Trying to add Netflix again (duplicate)")
 manager.add_subscription(netflix)
 assert manager.subscriptions.count(netflix) == 1, "Netflix should only be once in the list"
-print("PASS: Duplicate Netflix prevented")
+print("Duplicate Netflix prevented")
 
 
 print("Adding Spotify")
 manager.add_subscription(spotify)
 print("Current subscriptions:", [s.name for s in manager.subscriptions])
 assert len(manager.subscriptions) == 2, "Should have 2 subscriptions"
-print("PASS: Spotify added successfully")
+print("Spotify added successfully")
 
 #FULL LIST OF TESTS
 
@@ -66,7 +66,7 @@ print("PASS: Spotify added successfully")
 result_cc = netflix.get_price(1)
 expected_cc = 1*28 #28
 assert result_cc == expected_cc, "Test failed, calculated incorrect result"
-print("PASS: Tier 1 works")
+print("Tier 1 works")
 
 #tier 2 test
 result_t2 = netflix.calculate_cost(4) #should be 18 x 4
@@ -96,6 +96,25 @@ result_large = netflix.calculate_cost(1000)
 expected_large = 10000
 assert result_large == expected_large
 print("This program handles large values well")
+
+
+
+
+#ERROR CASES
+
+print("\n4. Testing Error Cases")
+# Test negative amount
+try:
+    netflix.calculate_cost(-1)
+    assert False, "Should have raised ValueError for negative amount"
+except ValueError:
+    print("Negative amount correctly raises error")
+
+# Test zero amount
+result4 = netflix.calculate_cost(0)
+assert result4 == 0, "Zero amount should cost zero"
+print("Zero amount handled correctly, test passed")
+
 
 
 
