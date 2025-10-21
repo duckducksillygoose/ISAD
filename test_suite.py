@@ -66,17 +66,20 @@ print("PASS: Spotify added successfully")
 result_cc = netflix.get_price(1)
 expected_cc = 1*28 #28
 assert result_cc == expected_cc, "Test failed, calculated incorrect result"
+print("PASS: Tier 1 works")
 
 #tier 2 test
 result_t2 = netflix.calculate_cost(4) #should be 18 x 4
 expected_t2 = 4*18
 assert result_t2 == expected_t2, "Test failed, did not return the correct amount"
+print("Tier 2 works")
 
 
 #tier 3 test
 result_t3 = netflix.calculate_cost(7) #should be 70
 expected_t3 = 70
 assert result_t3 == expected_t3
+print("Tier 3 works")
 
 
 #inbetween testing
@@ -84,6 +87,7 @@ assert result_t3 == expected_t3
 result_it = netflix.calculate_cost(2) #should be 2 x 28 or 56
 expected_it = 2*28
 assert result_it == expected_it
+print("Tier 4 works")
 
 
 #large value testing
@@ -91,6 +95,7 @@ assert result_it == expected_it
 result_large = netflix.calculate_cost(1000)
 expected_large = 10000
 assert result_large == expected_large
+print("This program handles large values well")
 
 
 
