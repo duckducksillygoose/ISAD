@@ -119,6 +119,22 @@ assert netflix not in manager.subscriptions, "Netflix should be removed"
 assert len(manager.subscriptions) == 1, "Should have 1 subscription left"
 
 
+#add_subscription internal logic tests
+test_manager = SubscriptionManager()
+test_manager.add_subscription(spotify)
+
+assert test_manager.subscriptions[0].name == "Spotify"
+assert test_manager.subscriptions[0].units == "per month"
+print("Internal list contains correct data")
+
+
+
+test_manager.add_subscription(netflix)
+stored_service = test_manager.subscriptions[0]
+assert stored_service is netflix, "not the same object"  # should be same object
+print("Same object reference stored internally")
+
+
 
 print("ALL TESTS PASSED AND COMPLETED")
 
