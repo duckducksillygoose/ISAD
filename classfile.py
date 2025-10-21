@@ -31,33 +31,33 @@ class Service():
         self.overall = 0
 
 
-def calculate_cost(self, amount):
+    def calculate_cost(self, amount):
 
-    if amount < 0:
-        raise ValueError("Amount cannot be negative")
-    
-    for i in range(len(self.tiers)):
-        if i == len(self.tiers) - 1:
-            if amount >= self.tiers[i]:
+        if amount < 0:
+            raise ValueError("Amount cannot be negative")
+        
+        for i in range(len(self.tiers)):
+            if i == len(self.tiers) - 1:
+                if amount >= self.tiers[i]:
+                    return self.cost[i] * amount
+            elif self.tiers[i] <= amount < self.tiers[i + 1]:
                 return self.cost[i] * amount
-        elif self.tiers[i] <= amount < self.tiers[i + 1]:
-            return self.cost[i] * amount
-    
-    return None  # No tier matched
+        
+        return None  # No tier matched
 
-def get_price(self):
-    """Handles user interaction"""
-    amount = float(input("How much of this service would you like?"))
-    total = self.calculate_cost(amount)
-    
-    if total is not None:
-        unit_cost = total / amount
-        print(f"The cost per unit for this amount is {unit_cost}")
-        print(f"The total cost is {total}")
-        self.overall = total
-        print()
-    else:
-        print("Could not determine price for this amount.")
+    def get_price(self):
+        """Handles user interaction"""
+        amount = float(input("How much of this service would you like?"))
+        total = self.calculate_cost(amount)
+        
+        if total is not None:
+            unit_cost = total / amount
+            print(f"The cost per unit for this amount is {unit_cost}")
+            print(f"The total cost is {total}")
+            self.overall = total
+            print()
+        else:
+            print("Could not determine price for this amount.")
 
 
 

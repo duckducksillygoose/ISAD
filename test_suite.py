@@ -63,7 +63,7 @@ print("Spotify added successfully")
 #TESTING COST CALCULATIONS (more whitebox)
 
 #netflix calculate cost as well as spotify
-result_cc = netflix.get_price(1)
+result_cc = netflix.calculate_cost(1)
 expected_cc = 1*28 #28
 assert result_cc == expected_cc, "Test failed, calculated incorrect result"
 print("Tier 1 works")
@@ -92,7 +92,7 @@ print("Tier 4 works")
 
 #large value testing
 
-result_large = netflix.calculate_cost(1000)
+result_large = spotify.calculate_cost(1000)
 expected_large = 10000
 assert result_large == expected_large
 print("This program handles large values well")
@@ -115,7 +115,10 @@ result4 = netflix.calculate_cost(0)
 assert result4 == 0, "Zero amount should cost zero"
 print("Zero amount handled correctly, test passed")
 
+print("Subscription removal testing")
 
+print("Trying to remove Hulu, not in list")
+manager.delete_subscription(Hulu)
 
 
 
