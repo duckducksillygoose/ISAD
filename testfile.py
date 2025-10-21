@@ -24,6 +24,7 @@ a1 = manager.add_subscription(netflix)
 print("Manager subscriptions:", [s.name for s in manager.subscriptions])
 netflix.get_price()
 
+
 ##duplicate
 print("Trying to add netflix again")
 a2 = manager.add_subscription(netflix)
