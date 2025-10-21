@@ -34,3 +34,12 @@ assert manager.subscriptions.count(netflix) == 1, "Netflix should only be once i
 print("PASS: Duplicate Netflix prevented")
 
 
+print("Adding Spotify")
+manager.add_subscription(spotify)
+print("Current subscriptions:", [s.name for s in manager.subscriptions])
+assert len(manager.subscriptions) == 2, "Should have 2 subscriptions"
+print("✅ PASS: Spotify added successfully")
+
+
+
+
