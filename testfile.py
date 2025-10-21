@@ -95,3 +95,24 @@ print("Add 4.01 hours of netflix, unit price should be 18")
 t1= manager.add_subscription(netflix)
 netflix.get_price()
 manager.delete_subscription(netflix)
+
+assert manager.subscriptions.count == 0, "Not empty"
+
+
+print("Now we are going to test the typing function, whether characters are accepted or not")
+
+s = input("What service would you like? The options are netflix, spotify and youtube")
+
+if s.upper() == "YOUTUBE":
+    manager.add_subscription(youtube)
+
+elif s.upper() == "SPOTIFY":
+    manager.add_subscription(spotify)
+
+elif s.upper() == "NETFLIX":
+    manager.add_subscription(netflix)
+
+    #not case sensitive
+
+else:
+    print("That is not a valid input")
